@@ -54,8 +54,10 @@ function removeBackgroundColorById(elementId){
     element.classList.remove('bg-orange-400') ;
     
     }
-    
 
+function gameOver() {
+  
+}
 
     function  getTextElementById(elementId){
         const element=document.getElementById(elementId);

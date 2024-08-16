@@ -31,7 +31,7 @@ function keyBoardKeyupEvent(event) {
 
         console.log('you wll get the point ');
         // console.log('Correct!',expectedCurrentAlphabet);
-        const currentScore=document.getElementById('current-score');
+        const currentScore=getTextElementById('current-score');
        const updatedScore=currentScore+1;
 
        setTextElementById ('current-score',updatedScore);
@@ -46,11 +46,13 @@ function keyBoardKeyupEvent(event) {
         console.log(' you lost the pont ');
 
 
-        const currentLive=document.getElementById('live-score');
+        const currentLive=getTextElementById('live-score');
         const updatedLive=currentLive-1;
-        if( updatedLive===0 ){
-
-        }
+       if(updatedLive ===0 ){
+        alert ('game over');
+        return ;
+       }
+       
         setTextElementById('live-score',updatedLive );
         // const currentLiveScore=document.getElementById('live-score');
         // const currentLiveText=currentLiveScore.innerText; 
