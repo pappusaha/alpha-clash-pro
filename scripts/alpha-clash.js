@@ -31,38 +31,36 @@ function keyBoardKeyupEvent(event) {
 
         console.log('you wll get the point ');
         // console.log('Correct!',expectedCurrentAlphabet);
-        const currentScore=document.getElementById('current-score')
-        const currentScoreText=currentScore.innerText; 
-        const  mainText=parseInt(currentScoreText);
-        console.log (mainText);
+        const currentScore=document.getElementById('current-score');
+       const updatedScore=currentScore+1;
+
+       setTextElementById ('current-score',updatedScore);
 
 
-
-
-
-        const newScore=mainText+1;
-
-
-        currentScore.innerText=newScore;
+        // currentScore.innerText=updatedScore;
         
         removeBackgroundColorById(expectedCurrentAlphabet);
         continueGame();
     }
-    else{
+    else{ 
         console.log(' you lost the pont ');
 
-        const currentLiveScore=document.getElementById('live-score');
-        const currentLiveText=currentLiveScore.innerText; 
-        const mainLiveNumber=parseInt(currentLiveText);
-        console.log(mainLiveNumber);
 
-        const changingNumber=mainLiveNumber-1;
+        const currentLive=document.getElementById('live-score');
+        const updatedLive=currentLive-1;
+        if( updatedLive===0 ){
 
-        currentLiveScore.innerText=changingNumber;
-    }
+        }
+        setTextElementById('live-score',updatedLive );
+        // const currentLiveScore=document.getElementById('live-score');
+        // const currentLiveText=currentLiveScore.innerText; 
+        // const mainLiveNumber=parseInt(currentLiveText);
+        // console.log(mainLiveNumber);
 
+        // const changingNumber=mainLiveNumber-1;
 
-    
+        // currentLiveScore.innerText=changingNumber;
+    } 
 
 }
 
@@ -83,8 +81,8 @@ currentAlphabet.innerText = alphabet;
 
 
 setBackgroundColorById(alphabet)
-}
 
+}
 
 function play() {
     hideElementById('home-screen');
